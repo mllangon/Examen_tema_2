@@ -12,3 +12,11 @@ struct Estudiante {
     int num_materias;
 };
 
+void agregarMateria(struct Estudiante *est, const char *materia) {
+    if (est->num_materias < MAX_MATERIAS) {
+        strcpy(est->materias[est->num_materias], materia);
+        est->num_materias++;
+    } else {
+        printf("No se pueden agregar mas materias\n");
+    }
+}
