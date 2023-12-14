@@ -22,10 +22,13 @@ void agregarMateria(struct Estudiante *est, const char *materia) {
 }
 
 void eliminarMateria(struct Estudiante *est, const char *materia) {
-    if (est->num_materias < MAX_MATERIAS) {
-        strcpy(est->materias[est->num_materias], materia);
-        est->num_materias++;
-    } else {
-        printf("No se pueden agregar mas materias\n");
+    for (int i = 0; i < est->num_materias; i++) {
+        if (strcmp(est->materias[i], materia) == 0) {
+            for (int j = i; j < est->num_materias - 1; j++) {
+                strcpy(est->materias[j], est->materias[j + 1]);
+            }
+            est->num_materias--;
+            return;
+        }
     }
 }
