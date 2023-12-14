@@ -39,3 +39,19 @@ void mostrarMaterias(const struct Estudiante *est) {
         printf("%s\n", est->materias[i]);
     }
 }
+
+int main() {
+    struct Estudiante estudiante;
+    char materia[MAX_NOMBRE];
+    int opcion;
+
+    printf("Ingrese el nombre del estudiante: ");
+    fgets(estudiante.nombre, MAX_NOMBRE, stdin);
+    estudiante.nombre[strlen(estudiante.nombre) - 1] = '\0';
+
+    printf("Ingrese la edad del estudiante: ");
+    scanf("%d", &estudiante.edad);
+    getchar();
+
+    estudiante.num_materias = 0;
+}
