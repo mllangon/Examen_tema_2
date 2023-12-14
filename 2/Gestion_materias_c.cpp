@@ -47,11 +47,43 @@ int main() {
 
     printf("Ingrese el nombre del estudiante: ");
     fgets(estudiante.nombre, MAX_NOMBRE, stdin);
-    estudiante.nombre[strlen(estudiante.nombre) - 1] = '\0';
+    estudiante.nombre[strcspn(estudiante.nombre, "\n")] = 0;
 
     printf("Ingrese la edad del estudiante: ");
     scanf("%d", &estudiante.edad);
     getchar();
 
     estudiante.num_materias = 0;
+
+    do {
+        printf("\n1. Agregar materia\n2. Eliminar materia\n3. Mostrar materias\n4. Salir\n");
+        printf("Seleccione una opcion: ");
+        scanf("%d", &opcion);
+        getchar(); // Limpiar el buffer de entrada
+
+        switch (opcion) {
+            case 1:
+                printf("Ingrese la materia a agregar: ");
+                fgets(materia, MAX_NOMBRE, stdin);
+                materia[strcspn(materia, "\n")] = 0; // Remover el salto de línea
+                agregarMateria(&estudiante, materia);
+                break;
+            case 2:
+                printf("Ingrese la materia a eliminar: ");
+                fgets(materia, MAX_NOMBRE, stdin);
+                materia[strcspn(materia, "\n")] = 0; // Remover el salto de línea
+                eliminarMateria(&estudiante, materia);
+                break;
+            case 3:
+                mostrarMaterias(&estudiante);
+                break;
+            case 4:
+                printf("Saliendo del programa.\n");
+                break;
+            default:
+                printf("Opcion no valida. Intente de nuevo.\n");
+        }
+    } while (opcion != 4);
+
+    return 0;
 }
