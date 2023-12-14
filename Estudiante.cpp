@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+using namespace std;
 
 struct Estudiante{
     std::string nombre;
@@ -13,3 +14,18 @@ void mostrarEstudiante(const Estudiante& estudiante){
     std::cout << "Promedio: " << estudiante.promedio << std::endl;
 }
 
+int main(){
+    Estudiante estudiante;
+    cout<< "Ingrese el nombre del estudiante: ";
+    getline(cin, estudiante.nombre);
+
+    cout<< "Ingrese la edad del estudiante: ";
+    cin>> estudiante.edad;
+
+    cout<< "Ingrese el promedio del estudiante: ";
+    cin>> estudiante.promedio;
+
+    mostrarEstudiante(estudiante);
+
+    return 0;
+}
