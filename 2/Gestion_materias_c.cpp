@@ -28,7 +28,14 @@ void eliminarMateria(struct Estudiante *est, const char *materia) {
                 strcpy(est->materias[j], est->materias[j + 1]);
             }
             est->num_materias--;
-            return;
+            break;
         }
+    }
+}
+
+void mostrarMaterias(const struct Estudiante *est) {
+    printf("Materias: %s:\n", est->nombre);
+    for (int i = 0; i < est->num_materias; i++) {
+        printf("%s\n", est->materias[i]);
     }
 }
