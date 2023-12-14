@@ -22,3 +22,9 @@ void eliminarMateria(Estudiante& est, const string& materia) {
     }
 }
 
+void mostrarMaterias (const Estudiante& est) {
+    cout<< "Materias: " << est.nombre << ":\n";
+    for (const auto& materia : est.materias) {
+        cout<< materia << endl;
+    }
+}
