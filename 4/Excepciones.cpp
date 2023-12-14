@@ -14,3 +14,8 @@ public:
 private:
     std::string msg_;
 };
+
+void funcionRiesgosa() {
+
+    throw AsistenciaException("Error al registrar asistencia.");
+}
