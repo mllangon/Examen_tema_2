@@ -45,3 +45,15 @@ void mostrarAsistencias(const struct Estudiante *est) {
                est->registroAsistencia[i].estado == Asistio ? "Asistió" : est->registroAsistencia[i].estado == Falta ? "Falta" : "Tardanza");
     }
 }
+
+int main() {
+    struct Estudiante estudiante = {0};
+
+    printf("Ingrese el nombre del estudiante: ");
+    fgets(estudiante.nombre, MAX_NOMBRE, stdin);
+    estudiante.nombre[strcspn(estudiante.nombre, "\n")] = 0;
+
+    registrarAsistencia(&estudiante, "2021-05-01", "Matematicas", Asistio);
+    registrarAsistencia(&estudiante, "2021-05-01", "Ingles", Falta);
+    registrarAsistencia(&estudiante, "2021-05-01", "Fisica", Tardanza);
+}
