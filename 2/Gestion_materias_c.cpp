@@ -20,3 +20,12 @@ void agregarMateria(struct Estudiante *est, const char *materia) {
         printf("No se pueden agregar mas materias\n");
     }
 }
+
+void eliminarMateria(struct Estudiante *est, const char *materia) {
+    if (est->num_materias < MAX_MATERIAS) {
+        strcpy(est->materias[est->num_materias], materia);
+        est->num_materias++;
+    } else {
+        printf("No se pueden agregar mas materias\n");
+    }
+}
