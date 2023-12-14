@@ -19,3 +19,13 @@ void funcionRiesgosa() {
 
     throw AsistenciaException("Error al registrar asistencia.");
 }
+
+int main() {
+    try {
+        funcionRiesgosa();
+    } catch (const AsistenciaException& e) {
+        std::cerr << "Excepción capturada: " << e.what() << std::endl;
+    }
+
+    return 0;
+}
