@@ -1,9 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include <stdio.h>
-#include <stdlib.h>
-
 #define ERROR_REGISTRO_ASISTENCIA -1
 #define EXITO 0
 
