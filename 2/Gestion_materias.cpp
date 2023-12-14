@@ -50,3 +50,27 @@ int main() {
 
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
+        switch (opcion) {
+            case 1:
+                std::cout << "Ingrese la materia a agregar: ";
+                getline(std::cin, materia);
+                agregarMateria(estudiante, materia);
+                break;
+            case 2:
+                std::cout << "Ingrese la materia a eliminar: ";
+                getline(std::cin, materia);
+                eliminarMateria(estudiante, materia);
+                break;
+            case 3:
+                mostrarMaterias(estudiante);
+                break;
+            case 4:
+                std::cout << "Saliendo del programa.\n";
+                break;
+            default:
+                std::cout << "Opción no valida. Intente de nuevo.\n";
+        }
+    } while (opcion != 4);
+
+    return 0;
+}
