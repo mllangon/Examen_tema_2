@@ -35,3 +35,13 @@ void registrarAsistencia(struct Estudiante *est, const char *fecha, const char *
         est->cantidadAsistencias++;
     }
 }
+
+void mostrarAsistencias(const struct Estudiante *est) {
+    printf("Asistencias de %s:\n", est->nombre);
+    for (int i = 0; i < est->cantidadAsistencias; i++) {
+        printf("Fecha: %s, Materia: %s, Estado: %s\n",
+               est->registroAsistencia[i].fecha,
+               est->registroAsistencia[i].materia,
+               est->registroAsistencia[i].estado == Asistio ? "Asistió" : est->registroAsistencia[i].estado == Falta ? "Falta" : "Tardanza");
+    }
+}
