@@ -26,3 +26,12 @@ struct Estudiante {
     struct Asistencia registroAsistencia[MAX_ASISTENCIAS];
     int cantidadAsistencias;
 };
+
+void registrarAsistencia(struct Estudiante *est, const char *fecha, const char *materia, EstadoAsistencia estado) {
+    if (est->cantidadAsistencias < MAX_ASISTENCIAS) {
+        strcpy(est->registroAsistencia[est->cantidadAsistencias].fecha, fecha);
+        strcpy(est->registroAsistencia[est->cantidadAsistencias].materia, materia);
+        est->registroAsistencia[est->cantidadAsistencias].estado = estado;
+        est->cantidadAsistencias++;
+    }
+}
