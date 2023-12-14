@@ -2,6 +2,8 @@
 #include<vector>
 #include<string>
 #include<algorithm>
+#include<limits>
+
 using namespace std;
 
 struct Estudiante{
@@ -29,12 +31,22 @@ void mostrarMaterias (const Estudiante& est) {
 }
 
 int main() {
+
     Estudiante estudiante;
-    cout<< "Ingrese el nombre del estudiante: ";
-    getline(cin, estudiante.nombre);
+    std::string materia;
+    int opcion;
 
-    cout<< "Ingrese la edad del estudiante: ";
-    cin>> estudiante.edad;
+    std::cout << "Ingrese el nombre del estudiante: ";
+    getline(std::cin, estudiante.nombre);
 
+    std::cout << "Ingrese la edad del estudiante: ";
+    std::cin >> estudiante.edad;
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
-}
+    do {
+        std::cout << "\n1. Agregar materia\n2. Eliminar materia\n3. Mostrar materias\n4. Salir\n";
+        std::cout << "Seleccione una opcion: ";
+        std::cin >> opcion;
+
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
