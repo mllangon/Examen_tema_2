@@ -7,7 +7,6 @@ using namespace std;
 struct Estudiante{
     std::string nombre;
     int edad;
-    float promedio;
     vector<string> materias;
 };
 
@@ -27,4 +26,15 @@ void mostrarMaterias (const Estudiante& est) {
     for (const auto& materia : est.materias) {
         cout<< materia << endl;
     }
+}
+
+int main() {
+    Estudiante estudiante;
+    cout<< "Ingrese el nombre del estudiante: ";
+    getline(cin, estudiante.nombre);
+
+    cout<< "Ingrese la edad del estudiante: ";
+    cin>> estudiante.edad;
+
+
 }
