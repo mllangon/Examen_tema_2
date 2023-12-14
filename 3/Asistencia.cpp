@@ -15,3 +15,11 @@ struct Asistencia{
     string materia;
     estadoAsistencia estado;
 };
+
+struct Estudiante{
+    string nombre;
+    int edad;
+    vector<string> materias;
+    vector<Asistencia> asistencias;
+};
+
